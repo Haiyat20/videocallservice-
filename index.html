@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ভিডিও কল সার্ভিস - অবিদা সুলতানা</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S7WKFXVPE1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S7WKFXVPE1');
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #e0f7fa, #fff);
+      color: #333;
+    }
+    header {
+      background: #004466;
+      text-align: center;
+      color: white;
+      padding: 3rem 1rem;
+      animation: fadeIn 2s ease;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      animation: dropIn 1s ease;
+    }
+    .intro {
+      margin-top: 1rem;
+      animation: slideFromRight 1.2s ease;
+    }
+    .intro p {
+      margin: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .carousel-section h2 {
+      text-align: center;
+      margin: 2rem 0 1rem;
+      font-size: 1.8rem;
+      animation: zoomIn 1.5s ease;
+    }
+    .carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; /* এটা নতুন যোগ করুন */
+  gap: 1rem;
+  padding: 1rem;
+}
+    .carousel img {
+      min-width: 350px;
+      max-width: 350px;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 10px;
+      scroll-snap-align: center;
+      border: 2px solid #ccc;
+      animation: fadeInUp 1.5s ease;
+    }
+    /* সার্ভিস বক্স */
+    .service-box {
+      background: #f9f5ff;
+      padding: 2rem;
+      margin: 2rem 1rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeInUp 1.2s ease;
+    }
+    .service-box h2 {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .service-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    ..service-box ul li {
+  font-weight: bold;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  animation: flyInDown 1s ease forwards;
+}
+    .service-box ul li::before {
+      content: '✔';
+      color: green;
+      margin-right: 10px;
+    }
+
+    /* পেমেন্ট সেকশন */
+    .payment-section {
+      background: #ffffff;
+      padding: 2rem;
+      margin: 2rem 1rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeInUp 1.5s ease;
+    }
+    .payment-buttons button {
+      background-color: #d9e4f5;
+      border: none;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 0.5rem;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .payment-buttons img {
+      height: 25px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .payment-buttons button:hover {
+      transform: scale(1.05);
+      background-color: #c3d9f0;
+    }
+    .demo-button {
+      background: #ff4d4d;
+      border: none;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .demo-button:hover {
+      background: #e60000;
+    }
+    .payment-details {
+      display: none;
+      margin-top: 1rem;
+    }
+    .payment-details input, .payment-details select, .submit-btn, .facebook-btn {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .submit-btn {
+      background: #5a00cc;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background: #7b28e5;
+    }
+    .facebook-btn {
+      background: #4267B2;
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-top: 1rem;
+    }
+
+    /* রিভিউ সেকশন */
+    .review-section {
+      margin: 2rem 1rem;
+      animation: fadeIn 2s ease;
+    }
+    .review {
+      background: #e8f0fe;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      animation: slideLeft 1.5s ease;
+    }
+    .review img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .review-content {
+      flex: 1;
+    }
+    .stars {
+      color: gold;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ইউজার রিভিউ সাবমিট ফর্ম */
+    .submit-review {
+      background: #d1f0e1;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .submit-review textarea, .submit-review input {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.7rem;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+    }
+    .submit-review button {
+      background: #00a86b;
+      border: none;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .submit-review button:hover {
+      background: #009970;
+    }
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideFromRight {
+      from { transform: translateX(100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes dropIn {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideLeft {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes flyInDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>ভিডিও কল সার্ভিস</h1>
+  <img src="https://i.postimg.cc/pdWQLBtt/1745901866034.jpg" alt="অবিদা সুলতানা">
+  <div class="intro">
+    <p>নাম: অবিদা সুলতানা</p>
+    <p>বয়স: ২২ বছর</p>
+    <p>ঠিকানা: ঢাকা, মিরপুর</p>
+  </div>
+</header>
+
+<section class="carousel-section">
+  <h2>ডেমো ছবি</h2>
+  <div class="carousel">
+    <img src="https://i.postimg.cc/rm689fyB/1745902058294.jpg" alt="Demo 1">
+    <img src="https://i.postimg.cc/q7sF9wxV/1745902060826.jpg" alt="Demo 2">
+    <img src="https://i.postimg.cc/jdfBHRnS/1745902063007.jpg" alt="Demo 3">
+    <img src="https://i.postimg.cc/gJkPs1FB/1745902056235.jpg" alt="Demo 4">
+  </div>
+</section>
+
+<section class="service-box">
+  <h2>মিনিট অনুযায়ী চার্জ</h2>
+  <ul>
+    <li>৫ মিনিট: ১০০ টাকা</li>
+    <li>১০ মিনিট: ২০০ টাকা</li>
+    <li>২০ মিনিট: ৩০০ টাকা</li>
+    <li>৩০ মিনিট: ৪০০ টাকা</li>
+    <li>১ ঘন্টা: ৭০০ টাকা</li>
+  </ul>
+  <p><strong>❓ তুমি কত মিনিট করতে চাও?</strong></p>
+</section>
+
+<section class="service-box">
+  <h2>মুল বার্তা</h2>
+  <ul>
+    <li>🚫 <strong>ফ্রিতে স্যাম্পল দেখায় না কারণ অনেকে দেখে ফ্রিতে চলে যায়।</strong></li>
+    <li>📹 <strong>ভিডিও কল সার্ভিস।</strong></li>
+  </ul>
+</section>
+
+<section class="payment-section">
+  <h2>পেমেন্ট অপশন</h2>
+  <div class="payment-buttons">
+    <button onclick="showForm()"><img src="https://i.postimg.cc/vZGK7LxM/images-8.jpg"> বিকাশ করুন</button>
+    <button onclick="showForm()"><img src="https://i.postimg.cc/4N6MhFdB/images-1.png"> নগদ করুন</button>
+  </div>
+  <button class="demo-button" onclick="showDemo()">ডেমো দেখতে চাই (৩ মিনিট ৫০ টাকা)</button>
+
+  <div class="payment-details" id="paymentDetails">
+    <input type="text" id="name" placeholder="তোমার নাম">
+    <input type="tel" id="phone" placeholder="ফোন নাম্বার">
+    <input type="text" id="transaction" placeholder="ট্রানজেকশন নাম্বার">
+    <select id="minutes" onchange="updateAmount()">
+      <option value="">-- মিনিট নির্বাচন করো --</option>
+      <option value="100">৫ মিনিট - ১০০ টাকা</option>
+      <option value="200">১০ মিনিট - ২০০ টাকা</option>
+      <option value="300">২০ মিনিট - ৩০০ টাকা</option>
+      <option value="400">৩০ মিনিট - ৪০০ টাকা</option>
+      <option value="700">১ ঘন্টা - ৭০০ টাকা</option>
+    </select>
+    <p id="amount"></p>
+    <p style="margin-top: 10px; font-weight: bold; color: red;">
+  পেমেন্ট করতে হবে <strong>বিকাশ/নগদ: 01601162005</strong> নাম্বারে Send Money অপশনে।
+</p>
+    <button class="submit-btn" onclick="submitPayment()">সাবমিট করুন</button>
+    <a class="facebook-btn" href="https://www.facebook.com/abida.sulatana.370668?mibextid=rS40aB7S9Ucbxw6v" target="_blank">ফেসবুকে মেসেজ পাঠাও</a>
+  </div>
+</section>
+
+<section class="review-section">
+  <h2>কাস্টমার রিভিউ</h2>
+
+  <div class="review">
+    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User1">
+    <div class="review-content">
+      <div class="stars">★★★★★</div>
+      <p>“অসাধারণ সেবা, পেশাদার আচরণ!” – রিফাত খান</p>
+    </div>
+  </div>
+
+  <div class="review" style="animation: slideFromRight 1.5s ease;">
+    <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="User2">
+    <div class="review-content">
+      <div class="stars">★★★★★</div>
+      <p>“নিশ্চিন্তে সেবা পেয়েছি, অনেক ভালো!” – আফজাল হোসেন</p>
+    </div>
+  </div>
+
+  <div class="review">
+    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="User3">
+    <div class="review-content">
+      <div class="stars">★★★★★</div>
+      <p>“দারুণ আচরণ, ভবিষ্যতে আবার করবো!” – ইমন হাসান</p>
+    </div>
+  </div>
+
+  <div class="submit-review">
+    <h3>তোমার রিভিউ জমা দাও</h3>
+    <input type="text" id="newName" placeholder="তোমার নাম">
+    <textarea id="newReview" rows="3" placeholder="তোমার রিভিউ"></textarea>
+    <button onclick="submitReview()">সাবমিট করুন</button>
+  </div>
+</section>
+
+<footer>
+  &copy; ২০২৫ অবিদা সুলতানা. সর্বস্বত্ব সংরক্ষিত।
+</footer>
+
+<script>
+  function showForm() {
+    document.getElementById('paymentDetails').style.display = 'block';
+  }
+  function showDemo() {
+    document.getElementById('paymentDetails').style.display = 'block';
+    document.getElementById('minutes').innerHTML = '<option value="50">৩ মিনিট - ৫০ টাকা</option>';
+    document.getElementById('amount').textContent = 'আপনাকে পেমেন্ট করতে হবে ৫০ টাকা';
+  }
+  function updateAmount() {
+    const minutes = document.getElementById('minutes').value;
+    document.getElementById('amount').textContent = minutes ? `আপনাকে পেমেন্ট করতে হবে ${minutes} টাকা` : '';
+  }
+  function generateConfirmation() {
+    const code = Math.floor(100000 + Math.random() * 900000);
+    alert(`আপনার পেমেন্ট সম্পন্ন হয়েছে! নিশ্চিতকরণ কোড: ${code}`);
+  }
+  function submitReview() {
+    const name = document.getElementById('newName').value;
+    const reviewText = document.getElementById('newReview').value;
+    if (name && reviewText) {
+      const reviewSection = document.querySelector('.review-section');
+      const newReview = document.createElement('div');
+      newReview.className = 'review';
+      newReview.innerHTML = `<img src="https://randomuser.me/api/portraits/men/${Math.floor(Math.random()*90)}.jpg" alt="New User">
+        <div class="review-content">
+          <div class="stars">★★★★★</div>
+          <p>“${reviewText}” – ${name}</p>
+        </div>`;
+      reviewSection.insertBefore(newReview, document.querySelector('.submit-review'));
+      document.getElementById('newName').value = '';
+      document.getElementById('newReview').value = '';
+    } else {
+      alert('সব তথ্য পূরণ করুন!');
+    }
+  }
+  // ডেমো ইমেজ অটো স্লাইড
+setInterval(() => {
+  const carousel = document.querySelector('.carousel');
+  carousel.scrollBy({ left: 260, behavior: 'smooth' });
+}, 3000);
+</script>
+<!-- Firebase Config and script -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC4Jcki4Sv3XI37c-pljISikJI0-hAFNio",
+  authDomain: "videocallservice-24b33.firebaseapp.com",
+  projectId: "videocallservice-24b33",
+  storageBucket: "videocallservice-24b33.appspot.com",
+  messagingSenderId: "234401128672",
+  appId: "1:234401128672:web:d775e481e4288aa706b085",
+  measurementId: "G-S7WKFXVPE1"
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const analytics = getAnalytics(app);
+
+window.submitPayment = function() {
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const transaction = document.getElementById('transaction').value;
+  const minutes = document.getElementById('minutes').value;
+  const code = Math.floor(100000 + Math.random() * 900000);
+
+  set(ref(database, 'payments/' + code), {
+    username: name,
+    phone: phone,
+    transactionId: transaction,
+    minutes: minutes,
+    amount: minutes,
+    confirmCode: code
+  }).then(() => {
+    alert('✅ আপনার পেমেন্ট সফল হয়েছে! আপনার কোড: ' + code);
+  }).catch((error) => {
+    alert('❌ সাবমিশনে সমস্যা হয়েছে: ' + error);
+  });
+}
+</script>
+
+</body>
+</html>
+    
